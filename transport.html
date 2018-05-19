@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ticket type</title>
+  <meta charset="utf-8">
+    <link rel="icon" href="image/logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<body >
+<div class="cover" style="height:17 0%;margin-bottom:0;background-image:url('image/tour.jpg');">
+<nav class="navbar">
+ <div class="container-fluid">
+    <div class="navbar-header">
+      <p class="navbar-brand"><a href="index.html"><img src="image/logo.png" style="width:200px;height:100px"></a></p>
+    </div>
+	
+    <ul class="nav navbar-nav navbar navbar-right" style="font-size:20px;">
+      <li ><a href="index.html">Home</a></li>
+       <li><a href="tour.htmk">Book now</a></li>
+	   <li><a href="select_package.html">Select Package</a></li>
+	   <li><a href="transport.html">Select ticket type</a></li>
+      <li><a href="confirm.html">Display details</a></li>
+	  <li><a href="delete.html">Delete details</a></li>
+      <li><a href="update.html">Update Details</a></li>
+	  
+     
+    </ul>
+  </div>
+</nav>
+
+<div class="cover-heading" >
+		
+                  <a href="#select" class="btn btn-lg btn-secondary" id="btn1" style="font-size:30px;border-radius:0;padding:15px 25px;border:4px solid white;margin-bottom:15%;">SELECT TRANSPORT TYPE</a>
+		    
+        
+</div>
+</div>
+
+			
+<!--related tours starts here-->
+<div class="container" id="select">
+  <div class="container">
+				<div class="row">
+					<div class="col-md-12">
+					<div  class="choose-main">
+						<h1 class="special-head">SELECT TYPE OF TICKET</h1>
+							
+							<form id="f1" method="POST" action="transport.php">
+	<div class="form-group" style="width:60%;margin-left:25%;margin-left:25%;margin-top:5%;">
+ 
+  <select class="form-control" name="sel">
+    <option>ECONOMY(1)</option>
+    <option>FIRST(2)</option>
+    <option >SECOND(3)</option>
+    
+	
+    <input type="text" name="tid" class="form-control" id="tid" placeholder="Enter your preference" required="required"> 
+<input type="text" name="email" class="form-control" id="id" placeholder="email" required="required"> 	
+  </select>
+  
+  <input  style="background-color:tomato;color:white;" type="submit" value="BOOK NOW" name="p1" id="submitButton" class="btn btn-lg btn-contact-bg" title="BOOK NOW" />
+
+   
+    </div></div>
+	 <footer style="text-align:center;margin-top:5%;margin-bottom:5%">
+	<p>&copy; Deepika Agrawal</p>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>TRAVELISTA</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="image/logo.png">
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+<script>
+$(function() {
+
+  var ul = $(".slider ul");
+  var slide_count = ul.children().length;
+  var slide_width_pc = 100.0 / slide_count;
+  var slide_index = 0;
+
+  ul.find("li").each(function(indx) {
+    var left_percent = (slide_width_pc * indx) + "%";
+    $(this).css({"left":left_percent});
+    $(this).css({width:(100 / slide_count) + "%"});
+  });
+
+  // Listen for click of prev button
+  $(".slider #prev").click(function() {
+    console.log("prev button clicked");
+    slide(slide_index - 1);
+  });
+
+  // Listen for click of next button
+  $(".slider #next").click(function() {
+    console.log("next button clicked");
+    slide(slide_index + 1);
+  });
+
+  function slide(new_slide_index) {
+
+    if(new_slide_index < 0 || new_slide_index >= slide_count) return; 
+
+    var margin_left_pc = (new_slide_index * (-100)) + "%";
+
+    ul.animate({"margin-left": margin_left_pc}, 400, function() {
+
+      slide_index = new_slide_index
+
+    });
+
+  }
+
+});
+</script>
+<style>
+.slider {
+  width: 100%;
+  overflow: hidden;
+  height: 300px;
+  position: relative;
+  border:none;
+  
+}
+
+.slider ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  width: 300%;
+  height: 100%;
+  top: 0;
+}
+
+.slider li {
+  padding: 0;
+  margin: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border: none;
+}
+
+.slider li img {
+  border: none;
+  width: 100%;
+  min-height: 100%;
+}
+
+.slider button {
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  top: 200px;
+  bottom: 0;
+  width: 10%;
+  height:20%;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  padding: 0;
+  text-align:center;
+  opacity: 0;
+  z-index: 2;
+}
+
+#prev {
+  left: 0;
+}
+
+#next {
+  right: 0;
+}
+
+.slider button:hover, .slider button:active {
+  opacity: 1.0;
+}
+
+.slider .content {
+  z-index: 3;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3em;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  line-height: 3em;
+  padding: 0 1em;
+  font-size: 1.5em;
+}
+
+.slider .content a {
+  color: inherit;
+}
+
+</style>
+
+<body >
+<div class="cover" style="height:170%;margin-bottom:0;">
+<nav class="navbar" >
+ <div class="container-fluid">
+    <div class="navbar-header">
+      <p class="navbar-brand"><a href="index.html"><img src="image/logo.png" style="width:200px;height:100px"></a></p>
+    </div>
+	
+    <ul class="nav navbar-nav navbar navbar-right" style="font-size:20px;">
+      <li ><a href="index.html">Home</a></li>
+       <li><a href="#choose-us">Choose Us</a></li>
+	  <li><a href="#package">Package</a></li>
+	  <li><a href="#top">Top Deals</a></li>
+      <li><a href="#related">Related Tours</a></li>
+	  <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#clients">Reviews</a></li>
+	  <li><a href="#blog">Our Blog</a></li>
+	  <li><a href="#contact">Contact Us</a></li>
+     
+    </ul>
+  </div>
+</nav>
+
+<div class="cover-heading" >
+<h1  style="font-size:400%;color:tomato;font-weight:bold;margin-top:0;" >WE MAKE AWESOME TOURS</h1>
+		
+        <p class="lead" style="margin-top:2%;margin-right:15%;margin-left:15%;" >The leading player in online flight bookings in India, We offers great offers, some of the lowest airfares, exclusive discounts and a seamless online booking experience.</p>
+        <p class="lead">
+          <a href="tour.html" class="btn btn-lg btn-secondary" id="btn1">FIND TOUR</a>
+		  <a href="tour.html" class="btn btn-lg btn-secondary" id="btn1"> FOR CUSTOMER</a>
+		    
+        </p>
+</div>
+</div>
+	   
+	   
+<!--We are good in -->
+<div class="container-fluid" id="services">
+<div class="container" style="font-size:120%;">
+	<div class="row" id="about-us">
+	<div class="col-sm-2"></div>
+		<div class="col-sm-8"><h1 style="margin-bottom:5%;font-size:200%;font-weight:bold;">WE ARE<span class="head-span"> GOOD IN</span ></h1>
+		
+       </p></div>
+	   <div class="col-sm-2"></div>
+	</div>
+</div>
+<div class="container" style="text-align:center;margin-left:10%;margin-right:10%;" id="choose-us">
+
+
+            <div class="row">
+                <div class="col-sm-3">
+                        <img src="image/hotel.png">
+                            <h4>HOTEL BOOKING</h4>
+                            <p>Book your flights hotels with India's leading travel booking company .</p>
+                        </div>
+                       
+             
+                <!-- /col -->
+
+                <div class="col-sm-3">
+                              <img src="image/plane.png">
+				
+                            <h4>FLIGHT BOOKING</h4>
+                            <p>While booking flights with us, you can expect the ultimate online booking experience.</p>
+                        </div>
+                     
+                <div class="col-sm-3">
+                            <img src="image/ticket.png">
+				
+                            <h4>TICKET BOOKING</h4>
+                            <p> With premium customer service, 24/7 dedicated helpline for support.</p>
+                        </div>
+                    
+               
+            </div>
+            <!-- end row -->
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <img src="image/cargo.png">
+				
+                            <h4>CRUSIES BOOKING</h4>
+                            <p> With a cheapest crusies guarantee, book your tickets at the lowest fares.</p>
+                        </div>
+                       
+
+                <div class="col-sm-3">
+                     <img src="image/train.png">
+                            <h4>RAIL BOOKING</h4>
+                            <p>Avail great offers, exclusive deals for loyal customers.</p>
+                        </div>
+                        
+                <div class="col-sm-3">
+                    <img src="image/house.png">
+                            <h4>AMAZING TOURS</h4>
+                            <p>Get instant updates for your flight status and fare drops.</p>
+                        </div>
+                        
+            </div>
+            <!-- end row -->
+</div>
+           
+
+        </div>
+
+<div  style="background-image: url(image/choose.jpg);  background-size:cover; background-position: center;">			
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+					<div  class="choose-main">
+						<h1 class="choose-head">WHY CHOOSE US</h1>
+							
+							<p class="section-title-white"> With the cheapest fare guarantee, experience great value at the lowest price. Instant notifications ensure current flight status, instant fare drops, amazing discounts, instant refunds and rebook options, price comparisons and many more interesting features..</p>
+						</div>
+					</div><!-- END COL -->
+				</div><!-- END ROW -->	
+				<div class="row text-center">		
+					<div class="col-sm-3">
+						<div class="single-choose">
+							
+							<h4>Handpicked Hotels</h4>
+							<p>One of the best hotels gauaranted  with the cheapest fare guarantee, experience great value at the lowest price</p>
+						</div>
+					</div><!-- END COL -->
+					<div class="col-sm-3">
+						<div class="single-choose">
+							
+							<h4>World Class Service</h4>
+							<p>Flight, hotel and holiday bookings through the desktop or mobile. Instant notifications ensure current flight status.</p>
+						</div>
+					</div><!-- END COL -->
+					<div class="col-sm-3">
+						<div class="single-choose">
+							
+							<h4>Best Price Guarantee</h4>
+							<p> Experience great value at the lowest price comparisons and many more interesting features.</p>
+						</div>
+					</div><!-- END COL -->	
+				</div><!-- END ROW -->
+			</div><!-- END CONTAINER -->			
+		</div>
+		<!-- END WHY CHOOSE US -->
+
+<!--special package starts here-->
+
+
+<div class="container" id="package">
+				<div class="row">
+					<div class="col-md-12">
+					<div  class="choose-main">
+						<h1 class="special-head">SPECIAL PACKAGE</h1>
+							
+						</div>
+					</div><!-- END COL -->
+				</div><!-- END ROW -->	
+				
+				
+
+    <div class="container">
+
+   
+      <div class="slider">
+  <ul>
+    <li>
+     <div class="col-sm-6">
+		<div class="image-gallery" id="panel1">
+  <img src="image/australia.jpg" alt="Avatar" class="image1">
+  <div class="overlay">
+    <div class="text"><h3>AUSTRALIA</h3>
+	<h4>Starting from Rs. 160000</h4>
+	<p><span class="glyphicon glyphicon-star"></span>
+	<span class="glyphicon glyphicon-star"></span>
+	<span class="glyphicon glyphicon-star"></span>
+	<span class="glyphicon glyphicon-star"></span>
+	<span class="glyphicon glyphicon-star"></span></p>
+	<a href="tour.html" class="book">BOOK NOW</a></div>
+	
+  </div>
+</div></div><!--column-->
+<div class="col-sm-6">
+		<div class="image-gallery" id="panel1">
+  <img src="image/india.jpg" alt="Avatar" class="image1">
+  <div class="overlay">
+    <div class="text"><h3>INDIA</h3>
+	<h4>Starting from Rs. 50000</h4>
+	<p><span class="glyphicon glyphicon-star"></span>
+	<span class="glyphicon glyphicon-star"></span>
+	<span class="glyphicon glyphicon-star"></span>
+	<span class="glyphicon glyphicon-star"></span>
+	<span class="glyphicon glyphicon-star"></span></p>
+	<a href="tour.html" class="book">BOOK NOW</a></div>
+	
+  </div>
+</div></div><!--column-->
+    </li>
+    <li>
+        <div class="col-sm-6">
+		<div class="image-gallery" id="panel1">
+  <img src="image/canada.jpg" alt="Avatar" class="image1">
+  <div class="overlay">
+    <div class="text"><h3>CANADA</h3>
+	<h4>Starting from Rs. 100000</h4>
+	<p><span class="glyphicon glyphicon-star"></span>
+	<span class="glyphicon glyphicon-star"></span>
+	<span class="glyphicon glyphicon-star"></span>
+	<span class="glyphicon glyphicon-star"></span>
+	<span class="glyphicon glyphicon-star"></span></p>
+	<a href="tour.html" class="book">BOOK NOW</a></div>
+	
+  </div>
+</div></div><!--column-->
+<div class="col-sm-6">
+		<div class="image-gallery" id="panel1">
+  <img src="image/hongkong.jpg" alt="Avatar" class="image1">
+  <div class="overlay">
+    <div class="text"><h3>HONGKONG</h3>
+	<h4>Starting from Rs. 200000</h4>
+	<p><span class="glyphicon glyphicon-star"></span>
+	<span class="glyphicon glyphicon-star"></span>
+	<span class="glyphicon glyphicon-star"></span>
+	<span class="glyphicon glyphicon-star"></span>
+	<span class="glyphicon glyphicon-star"></span></p>
+	<a href="tour.html" class="book">BOOK NOW</a></div>
+	
+  </div>
+</div></div><!--column-->
+    </li>
+    <li>
+        <div class="col-sm-6">
+		<div class="image-gallery" id="panel1">
+  <img src="image/france.jpg" alt="Avatar" class="image1">
+  <div class="overlay">
+    <div class="text"><h3>FRANCE</h3>
+	<h4>Starting from Rs. 180000</h4>
+	<p><span class="glyphicon glyphicon-star"></span>
+	<span class="glyphicon glyphicon-star"></span>
+	<span class="glyphicon glyphicon-star"></span>
+	<span class="glyphicon glyphicon-star"></span>
+	<span class="glyphicon glyphicon-star"></span></p>
+	<a href="tour.html" class="book">BOOK NOW</a></div>
+	
+  </div>
+</div></div><!--column-->
+<div class="col-sm-6">
+		<div class="image-gallery" id="panel1">
+  <img src="image/japan.jpg" alt="Avatar" class="image1">
+  <div class="overlay">
+    <div class="text"><h3>JAPAN</h3>
+	<h4>Starting from Rs. 130000</h4>
+	<p><span class="glyphicon glyphicon-star"></span>
+	<span class="glyphicon glyphicon-star"></span>
+	<span class="glyphicon glyphicon-star"></span>
+	<span class="glyphicon glyphicon-star"></span>
+	<span class="glyphicon glyphicon-star"></span></p>
+	<a href="tour.html" class="book">BOOK NOW</a></div>
+	
+  </div>
+</div></div><!--column-->
+    </li>
+  </ul>
+  <button class="glyphicon glyphicon-arrow-left"  id="prev" style="opacity:1;"></button>
+  <button class="glyphicon glyphicon-arrow-right"  id="next" style="opacity:1;"></button>
+</div>
+
+    </div>
+
+
+</div>
+<!--specail offers ends here-->
+
+<!--top deals-->
+
+<div class="container-fluid" id="top">
+
+
+<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+					<div  class="choose-main">
+						<h1 class="special-head">TOP DEALS</h1>
+							</div>
+					</div><!-- END COL -->
+				</div><!-- END ROW -->	
+</div>
+<div class="row"> 
+  <div class="column">
+  
+   	<div class="image-gallery">
+		<img src="image/special1.jpg" alt="Avatar" class="image">
+  <div class="special-overlay">
+    <div class="text"><br><br>
+	<a href="tour.html" class="book1">BOOK NOW</a><br><br>
+	<h4 style>TOUR DETAILS</h4>
+	</div>
+	
+  </div>
+</div>
+
+
+ 	<div class="image-gallery">
+		<img src="image/special2.jpg" alt="Avatar" class="image">
+  <div class="special-overlay">
+    <div class="text"><br><br>
+	<a href="tour.html" class="book1">BOOK NOW</a><br><br>
+	<h4 style>TOUR DETAILS</h4>
+	</div>
+	
+  </div>
+</div>
+
+	
+
+   </div>
+   
+  <div class="column">
+  
+  	
+
+		<div class="image-gallery">
+		<img src="image/special3.jpg" alt="Avatar" class="image">
+  <div class="special-overlay">
+    <div class="text"><br><br>
+	<a href="tour.html" class="book1">BOOK NOW</a><br><br>
+	<h4 style>TOUR DETAILS</h4>
+	</div>
+	
+  </div>
+</div>
+
+		<div class="image-gallery">
+		<img src="image/special4.jpg" alt="Avatar" class="image">
+  <div class="special-overlay">
+    <div class="text"><br><br>
+	<a href="tour.html" class="book1">BOOK NOW</a><br><br>
+	<h4 style>TOUR DETAILS</h4>
+	</div>
+	
+  </div>
+</div>
+    
+    
+  </div>  
+  <div class="column">
+    
+	
+		
+
+		<div class="image-gallery">
+		<img src="image/special5.jpg" alt="Avatar" class="image">
+  <div class="special-overlay">
+    <div class="text"><br><br>
+	<a href="tour.html" class="book1">BOOK NOW</a><br><br>
+	<h4 style>TOUR DETAILS</h4>
+	</div>
+	
+  </div>
+</div>
+
+		<div class="image-gallery">
+		<img src="image/special6.jpg" alt="Avatar" class="image">
+  <div class="special-overlay">
+    <div class="text"><br><br>
+	<a href="tour.html" class="book1">BOOK NOW</a><br><br>
+	<h4 style>TOUR DETAILS</h4>
+	</div>
+	
+  </div>
+</div>
+    
+  </div>
+ 
+</div>
+</div><!--end of top deals-->
+
+<!--related tours starts here-->
+<div class="container" id="related">
+
+<div class="container">
+  <div class="container">
+				<div class="row">
+					<div class="col-md-12">
+					<div  class="choose-main">
+						<h1 class="special-head">RELATED TOURS</h1>
+							</div>
+					</div><!-- END COL -->
+				</div><!-- END ROW -->	
+</div> 
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+   
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+                <div class="col-md-4">
+    <div class="thumbnail">
+      
+        <img src="image/istanbhul.jpg" alt="Lights" style="width:100%;height:100%;">
+        <div class="caption">
+		<h3>ISTANBHUL</h3>
+          <p>Starting from Rs. 70000</p>
+		  <a href="tour.html">BOOK NOW</a>
+        </div>
+
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="thumbnail">
+     <img src="image/tajmahal.jpg" alt="Lights" style="width:100%;">
+        <div class="caption">
+		<h3>TAJ MAHAL</h3>
+          <p>Starting from Rs. 30000</p>
+		  <a href="tour.html">BOOK NOW</a>
+        </div>
+    </div>
+  </div>
+	 <div class="col-md-4">
+    <div class="thumbnail">
+     <img src="image/pamukkula.jpg" alt="Lights" style="width:100%;">
+        <div class="caption">
+		<h3>PAMUKALLA</h3>
+          <p>Starting from Rs. 70000</p>
+		  <a href="tour.html">BOOK NOW</a>
+        </div>
+    </div>
+  </div>
+
+      </div>
+
+      <div class="item">
+              <div class="col-md-4">
+    <div class="thumbnail">
+     <img src="image/cappadocia.jpg" alt="Lights" style="width:100%;">
+        <div class="caption">
+		<h3>CAPPADOCIA</h3>
+          <p>Starting from Rs. 100000</p>
+		  <a href="tour.html">BOOK NOW</a>
+        </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="thumbnail">
+     <img src="image/singapore.jpg" alt="Lights" style="width:100%;">
+        <div class="caption">
+		<h3>SINGAPORE</h3>
+          <p>Starting from Rs. 150000</p>
+		  <a href="tour.html">BOOK NOW</a>
+        </div>
+    </div>
+  </div>
+	 <div class="col-md-4">
+    <div class="thumbnail">
+     <img src="image/indonesia.jpg" alt="Lights" style="width:100%;">
+        <div class="caption">
+		<h3>INDONESIA</h3>
+          <p>Starting from Rs. 140000</p>
+		  <a href="tour.html">BOOK NOW</a>
+        </div>
+    </div>
+  </div>
+
+      </div>
+    
+      <div class="item">
+              <div class="col-md-4">
+    <div class="thumbnail">
+     <img src="image/nepal.jpg" alt="Lights" style="width:100%;">
+        <div class="caption">
+		<h3>NEPAL</h3>
+          <p>Starting from Rs. 40000</p>
+		  <a href="tour.html">BOOK NOW</a>
+        </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="thumbnail">
+     <img src="image/vietnam.jpg" alt="Lights" style="width:100%;">
+        <div class="caption">
+		<h3>VIETNAM</h3>
+          <p>Starting from Rs. 100000</p>
+		  <a href="tour.html">BOOK NOW</a>
+        </div>
+    </div>
+  </div>
+	 <div class="col-md-4">
+    <div class="thumbnail">
+     <img src="image/srilanka.jpg" alt="Lights" style="width:100%;">
+        <div class="caption">
+		<h3>SRI LANKA</h3>
+          <p>Starting from Rs. 90000</p>
+		  <a href="tour.html">BOOK NOW</a>
+        </div>
+    </div>
+  </div>
+      </div>
+    </div>
+	<a class="left carousel-control" href="#myCarousel" data-slide="prev" id="prev-top">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next" id="next-top">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+   
+  </div>
+</div>
+
+
+
+</div>
+
+<!--related tours ends here-->
+
+
+<!--gallery starts here-->
+<div class="container" id="gallery">
+<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+					<div  class="choose-main">
+						<h1 class="special-head">GALLERY</h1>
+							</div>
+					</div><!-- END COL -->
+				</div><!-- END ROW -->	
+</div> 
+<div class="row">
+  <div class="column ">
+    <img src="image/tours.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="image/flights.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="image/crusies.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+ 
+</div>
+ <p style="margin-top:4%;text-align:center;font-size:150%;color:tomato;font-weight:bold;">CLICK ANY IMAGE TO VIEW MORE</p>
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 10</div>
+      <img src="image/tours.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 10</div>
+      <img src="image/flights.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 10</div>
+      <img src="image/crusies.jpg" style="width:100%">
+    </div>
+  <div class="mySlides">
+      <div class="numbertext">4 / 10</div>
+      <img src="image/tours1.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">5/ 10</div>
+      <img src="image/hotels1.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">6 / 10</div>
+      <img src="image/crusies1.jpg" style="width:100%">
+    </div>
+  <div class="mySlides">
+      <div class="numbertext">7 / 10</div>
+      <img src="image/tours2.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">8/ 10</div>
+      <img src="image/flights1.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">9 / 10</div>
+      <img src="image/hotels.jpg" style="width:100%">
+    </div>
+	<div class="mySlides">
+      <div class="numbertext">10 / 10</div>
+      <img src="image/hotels2.jpg" style="width:100%">
+    </div>
+    
+    <a class="prev1" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next1" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+
+
+  </div>
+</div>
+</div>
+<!--end of gallery-->
+
+<!--client review starts here-->
+ <script>
+ setCarouselHeight('#carousel-example');
+
+    function setCarouselHeight(id)
+    {
+        var slideHeight = [];
+        $(id+' .item').each(function()
+        {
+            // add all slide heights to an array
+            slideHeight.push($(this).height());
+        });
+
+        // find the tallest item
+        max = Math.max.apply(null, slideHeight);
+
+        // set the slide's height
+        $(id+' .carousel-content').each(function()
+        {
+            $(this).css('height',max+'px');
+        });
+    }
+	</script>
+	
+
+<div class="container-fluid" id="clients" style="background-image:url('image/nepal2.jpg');background-size:100%;">
+
+<div class="container" >
+				<div class="row">
+					<div class="col-md-12">
+					<div  class="choose-main">
+						<h1 class="special-head">WHAT OUR CLIENTS SAY</h1>
+								</div>
+					</div><!-- END COL -->
+				</div><!-- END ROW -->	
+</div> 
+<div id="carousel-example" class="carousel slide" data-ride="carousel">
+
+    <!-- Wrapper for slides -->
+    <div class="row" style="width:90%;margin-left:5%;margin-right:5%;color:white;" >
+        <div class="col-xs-offset-3 col-xs-6">
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="carousel-content">
+                        <div>
+                            <img src="image/client1.jpg" class="img-circle">
+                            <blockquote>A company you can trust on, really geniune price and nice service provided .</blockquote>
+							<h4 class="client-name">Client 1</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-content">
+                        <div>
+                            <img src="image/client2.jpg" class="img-circle">
+                                  <blockquote>I think you should go for their tours, if you really need some nice and afforable one.</blockquote>
+
+							<h4 class="client-name">Client 2</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-content">
+                        <div>
+                            <img src="image/client3.jpg" class="img-circle">
+                              <blockquote>I have really found them too good at their work.</blockquote>
+							<h4 class="client-name">Client 3</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>	
+ </div> 
+
+  </div>	
+ </div> 
+<!--client review ends here-->
+
+<!--blogs start here-->
+
+<div class="container" style="margin-bottom:15%;" id="blog">
+
+	<div class="container" >
+				<div class="row">
+					<div class="col-md-12">
+					<div  class="choose-main">
+						<h1 class="special-head">OUR BLOG</h1>
+								</div>
+					</div><!-- END COL -->
+				</div><!-- END ROW -->	
+</div>
+
+	<div class="row" >
+	<div class="col-sm-6">
+		<div class="col-sm-6" id="lower" style="background-image:url(image/blog1.jpg");>
+		
+		</div>
+		<div class="col-sm-6" id="upper" style="text-align:justify">
+			
+			<h4 style="color:tomato">How To Manage Finances During Travel – Guide By The Expert</h4>
+			<h5>Managing finances during travel can be tough especially if you don’t have much of travel experience. While travelling through different continents, countries and dealing with numerous currencies, you might get a little lost and end up mismanaging your money.</h5>
+			<a href="https://www.romancingtheplanet.com/managing-finances-during-travel/" style="color:tomato;text-decoration:none;">READ MORE</a>
+		</div>
+	</div>
+	<div class="col-sm-6">
+		<div class="col-sm-6" id="lower" style="background-image:url(image/blog2.jpg")>
+		
+		</div>
+		<div class="col-sm-6" id="upper" style="text-align:justify">
+			
+			<h4 style="color:tomato"> Stash Extra Cash</h4>
+			<h5>Cash is king around the world. To cover your ass in an emergency, make sure to stash some in a few different places. I recommend at least a couple hundred dollars worth. If you lose your wallet, your card stops working, or the ATMs run out of money, you’ll be glad you did.</h5>
+			<a href="https://www.romancingtheplanet.com/managing-finances-during-travel/" style="color:tomato;text-decoration:none;">READ MORE</a>
+		</div>
+	</div>
+	</div>
+	
+	<div class="row" style="margin-top:15%;" >
+	<div class="col-sm-6">
+		<div class="col-sm-6" id="lower" style="background-image:url(image/blo3.jpg");>
+		
+		</div>
+		<div class="col-sm-6" id="upper" style="text-align:justify">
+			
+			<h4 style="color:tomato">Research events going on while you’re there</h4>
+			<h5> This will help you make sure that you’re not missing the best events going on in the city -- fun things like festivals, ceremonies and natural events. Also be sure to research as a few national dishes to try. You don’t want to leave the country without experiencing what its known for.</h5>
+			<a href="https://www.romancingtheplanet.com/managing-finances-during-travel/" style="color:tomato;text-decoration:none;">READ MORE</a>
+		</div>
+	</div>
+	<div class="col-sm-6">
+		<div class="col-sm-6" id="lower" style="background-image:url(image/blog4.jpg")>
+		
+		</div>
+		<div class="col-sm-6" id="upper" style="text-align:justify">
+			
+			<h4 style="color:tomato">Check-in with your doctor and insurance carrier</h4>
+			<h5>Double check and make sure that you have all of the proper vaccinations and that you have renewed all essential prescriptions. Also, ask you medical insurance provider if your policy applies overseas for emergencies. If it doesn’t, and you want to add extra coverage, consider supplemental insurance..</h5>
+			<a href="https://www.romancingtheplanet.com/managing-finances-during-travel/" style="color:tomato;text-decoration:none;">READ MORE</a>
+		</div>
+	</div>
+	</div>
+
+</div>
+<!--blog ends here-->
+
+<!--contact starts here-->
+<div class="container-fluid" id="contact">
+				<div class="row" >		
+					<div class="col-lg-6 " id="contact-details" style="background-color:#e6e6fa;">
+						<div class="contact_address" style="margin-left:10%;">
+							<h3 style="margin-left:10%;margin-top:20%;margin-bottom:10%;font-size:30px;">CONTACT US</h3>				
+							<ul style="list-style:none;font-size:120%;line-height:300%;margin-bottom:20%;">
+								<li><img src="image/rocket.png">JAGANNATH INSTITUTE ROHINI SECTOR-9</li>
+								<li><img src="image/call.png">(+1) 1234567890</li>
+								<li><img src="image/cenvelope.png">Info@example.com</li>
+								<li><img src="image/clock.png">Mon - Fri: 08.00 - 16.00</li>
+							</ul>
+						</div>
+					</div><!-- END COL -->						
+					<div class="col-lg-6 "  >
+						<div class="contact">
+							<form id="contact-form" method="post" enctype="multipart/form-data" style="margin-left:10%;" action="mail.php">
+								<div class="row" style="margin-top:10%;">
+									<div class="form-group col-md-6">
+										<input type="text" name="name" class="form-control" id="first-name" placeholder="Name" required="required">
+									</div>
+									<div class="form-group col-md-6">
+										<input type="email" name="email" class="form-control" id="first-email" placeholder="Email" required="required">
+									</div>
+									<div class="form-group col-md-12">
+										<input type="text" name="subject" class="form-control" id="subject" placeholder="Subject" required="required">
+									</div>
+									<div class="form-group col-md-12">
+										<textarea rows="6" name="message" class="form-control" id="description" placeholder="Your Message" required="required"></textarea>
+									</div>
+									<div class="col-md-12">
+										<div class="actions">
+											<input  style="background-color:tomato;color:white;margin-top:5%;" type="submit" value="Send message" name="submit" id="submitButton" class="btn btn-lg btn-contact-bg" title="Submit Your Message!" />
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div><!-- END COL -->
+				</div><!--- END ROW -->				
+			</div><!--- END CONTAINER -->	
+	<footer style="text-align:center;margin-top:5%;margin-bottom:5%">
+	<p>&copy; Deepika Agrawal</p>
+	</footer>
+</body>
+</html>

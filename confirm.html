@@ -1,0 +1,86 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Display your details</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<body >
+<div class="cover" style="height:17 0%;margin-bottom:0;background-image:url('image/tour.jpg');">
+<nav class="navbar">
+ <div class="container-fluid">
+    <div class="navbar-header">
+      <p class="navbar-brand"><a href="index.html"><img src="image/logo.png" style="width:200px;height:100px"></a></p>
+    </div>
+	
+    <ul class="nav navbar-nav navbar navbar-right" style="font-size:20px;">
+      <li ><a href="index.html">Home</a></li>
+       <li><a href="tour.htmk">Book now</a></li>
+	   <li><a href="select_package.html">Select Package</a></li>
+	   <li><a href="transport.html">Select ticket type</a></li>
+      <li><a href="confirm.html">Display details</a></li>
+	  <li><a href="delete.html">Delete details</a></li>
+      <li><a href="update.html">Update Details</a></li>
+	  
+     
+    </ul>
+  </div>
+</nav>
+
+
+<div class="cover-heading" >
+		
+                  <a href="#contact-details" class="btn btn-lg btn-secondary" id="btn1" style="font-size:30px;border-radius:0;padding:15px 25px;border:4px solid white;margin-bottom:15%;">DISPLAY YOUR DETAILS</a>
+		    
+        
+</div>
+</div>
+
+
+<!--contact starts here-->
+<div class="container-fluid" id="tour">
+				<div class="row" >		
+					<div class="col-lg-8 " id="contact-details" >
+						<div class="contact_address" style="margin-top:5%;margin-left:5%;">
+											
+							<img src="image/srilanka.jpg" style="width:100%;">
+						</div>
+					</div><!-- END COL -->						
+					<div class="col-lg-4 "  >
+						<div class="contact">
+							<form id="contact-form" method="post" enctype="multipart/form-data" style="margin-left:2%;" action="final_order.php">
+								<div class="row" style="margin-top:10%;">
+								<div class="form-group col-md-12">
+										<input type="text" name="id" class="form-control" id="ID" placeholder="ID" required="required">
+									</div>
+									<div class="form-group col-md-12">
+										<input type="text" name="name" class="form-control" id="first-name" placeholder="Name" required="required">
+									</div>
+									<div class="form-group col-md-12">
+										<input type="email" name="email" class="form-control" id="first-email" placeholder="Email" required="required">
+									</div>
+									
+									<div class="col-md-12">
+										<div class="actions">
+											<input  style="background-color:tomato;color:white" type="submit" value="Send message" name="submit" id="submitButton" class="btn btn-lg btn-contact-bg" title="Submit Your Message!" />
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div><!-- END COL -->
+				</div><!--- END ROW -->				
+			</div><!--- END CONTAINER -->
+			
+<footer style="text-align:center;margin-top:5%;margin-bottom:5%">
+	<p>&copy; Deepika Agrawal</p>
+	</footer>
+</body>
+</html>

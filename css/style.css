@@ -1,0 +1,557 @@
+
+
+
+.nav li{
+	margin-right:2px;
+	margin-top:2%;
+	background-color:transparent;
+}
+
+.navbar-brand{
+	
+	margin-top:5%;
+	margin-bottom:2%;
+	padding-left:30%;
+	font-size:40px;
+	
+}	
+.logo{
+	margin-left:5%;
+	color: black;
+}
+.navbar-brand a:visited{
+	
+    text-decoration: unset;
+    color: #86bc42;
+   
+	
+}
+.navbar-brand a:active{
+	
+    text-decoration: unset;
+    
+   
+	
+}
+.navbar-brand a:hover{
+	
+    text-decoration: unset;
+    color: black;
+}
+
+a,
+a:focus {
+  color:white;
+}
+
+a:hover{
+	color:red;
+}
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #fff;
+  border: .05rem solid #fff;
+  border-radius:50px;
+	font-size:80%;
+  margin-bottom:5%;
+  margin-left:1%;
+  margin-top:2%;
+  
+}
+#btn1{
+	color:white;
+	background-color:tomato;
+	border:0px;
+
+}
+#btn1:hover{
+	color:white;
+	background-color:black;
+	
+}
+
+
+
+.cover{
+	text-align:center;
+	margin-bottom:10%;
+  background: url("../image/usa.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin-bottom:10%;
+
+}
+	
+.cover-heading{
+	
+	color:white;
+	margin-top:15%;
+	margin-right:5%;
+	margin-left:5%;
+	text-align:center;
+	
+}
+
+#services{
+	background-color:#e6e6fa;
+}
+
+#about-us{
+	text-align:center;
+	
+	
+}
+.head-span{
+	color:tomato;
+	
+}
+
+
+.col-sm-3{
+	margin-top:5%;
+	margin-bottom:5%;
+	margin-left:5%;
+	font-size:120%;
+	background-color:white;
+}
+
+.col-sm-3 h4{
+	margin-bottom:5%;
+	margin-top:5%;
+	font-size:120%;
+}
+
+.services{
+	background-color:#e6e6fa;
+}
+
+.col-sm-3 img{
+	margin-top:10%;
+	margin-bottom:5%;
+}
+
+.col-sm-3 img{
+	margin-top:10%;
+	margin-bottom:5%;
+}
+.col-sm-3 p{
+	margin-top:10%;
+	margin-bottom:5%;
+}
+
+.choose-main{
+	text-align:center;
+	margin-bottom:10%;
+	margin-top:10%;
+	color:white;
+	font-size:150%;
+}
+
+.choose-main p{
+	color:black;
+}
+
+.choose-head{
+	color:tomato;
+	font-size:3em;
+	font-weight:bold;
+}
+
+.image-gallery {
+  position: relative;  
+}
+
+
+.image1{
+  display: block;
+  width: 100%;
+
+}
+
+.image{
+  display: block;
+  width: 100%;
+  height:275px;
+}
+
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+ background-color:tomato;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+}
+
+.image-gallery:hover .overlay {
+  height: 80%;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.special-head{
+	color:tomato;
+	font-size:2em;
+	font-weight:bold;
+}
+
+.book
+{
+	text-decoration:none;
+	border-radius: 25px;
+	padding:5px 15px;
+	background-color:white;
+	color:black;
+}
+.book:hover{
+	text-decoration:none;
+	border:1px solid black;
+	padding:5px 15px;
+	background-color:black;
+	color:white;
+	
+}
+
+
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+    -ms-flex: 33.333%; /* IE10 */
+    flex: 33.333%;
+    max-width: 33.333%;
+	
+    
+}
+
+.column img {
+   
+    vertical-align: middle;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+    .column {
+        -ms-flex: 50%;
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+
+.special-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+background-image:transparent;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+}
+
+.image-gallery:hover .special-overlay {
+  height: 100%;
+}
+
+.book1
+{
+	text-decoration:none;
+	padding:5px 15px;
+	background-color:white;
+	color:black;
+}
+.book1:hover{
+	text-decoration:none;
+	border:1px solid black;
+	padding:5px 15px;
+	background-color:black;
+	color:white;
+	
+}
+
+#prev-top{
+	opacity:1;
+	height:10%;
+	margin-top:10%;
+	width:0.5%;
+	color:tomato;
+	background-image:transparent;
+}
+
+#next-top{
+	opacity:1;
+	height:10%;
+	margin-top:10%;
+	width:0.5%;
+	color:tomato;
+	background-image:transparent;
+}
+
+.caption a{
+	text-decoration:none;
+	color:tomato;
+	font-size:120%;
+	
+}
+
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+.column img{
+	height:250px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer
+}
+
+/* Next & previous buttons */
+.prev1,
+.next1 {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next1 {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev1:hover,
+.next1:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+
+/*client*/
+#clients{
+	background-color:#e6e6fa;
+	background-size:100%;
+	
+	margin-top:5%;
+	height:30%;
+	text-align:center;
+	
+}
+blockquote {
+    font-family: Georgia, serif;
+    position: relative;
+    margin: 0.5em;
+    padding: 0.5em 2em 0.5em 3em;
+	border-left:none;
+}
+
+blockquote:before {
+    font-family: Georgia, serif;
+    position: absolute;
+    font-size: 6em;
+    line-height: 1;
+    top: 0;
+    left: 0;
+    content: "\201C";
+}
+blockquote:after {
+    font-family: Georgia, serif;
+    position: absolute;
+   
+    float:right;
+    font-size:6em;
+    line-height: 1;
+    right:0;
+    bottom:-0.5em;
+    content: "\201D";
+}
+.client-name{
+	margin-bottom:5%;
+	font-weight:bold;
+}
+.img-circle{
+	height:100px;
+	width:100px;
+	margin-bottom:5%;
+	margin-top:10%;
+}
+
+
+
+#btn{
+	border-radius:0px;
+	background-color:#86bc42;
+	font-size:100%;
+	
+}
+#btn:hover{
+	background-color:black;
+}
+
+
+#lower {
+    position: absolute;
+    width: 75%;
+    height: 375px;
+    background-color: lightblue;
+	z-index:-1;
+	margin-left:10%;
+}
+
+#upper {
+    position: relative;
+    top: 60px;
+    right:10%;
+    width: 50%;
+	margin-left:10%;
+    height: 250px;
+    background-color: white;
+	box-shadow: 2px 2px #d3d3d3;
+	border: 0.5px solid #d3d3d3;
+}
+    
+}
+
+#contact-details{
+	background-color:#e6e6fa;
+}
+
+.contact_address ul li img{
+	margin-right:5%;
+	background-color:white;
+	padding:3% 3%;
+	margin-top:2%;
+	border-radius:30px;
+}
+
+
+.form-control{
+	border-style:hidden;
+	margin-bottom:5%;
+	width:80%;
+}
